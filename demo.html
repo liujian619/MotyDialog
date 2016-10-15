@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MotyDialog Demo</title>
+	<link rel="stylesheet" type="text/css" href="dialog.css">
+	<style type="text/css">
+		button {
+			width: 120px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<button id="tipDialog">提示框</button>
+	<button id="confirmDialog">确认框</button>
+	<button id="inputDialog">输入框</button>
+
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="dialog.min.js"></script>
+	<script type="text/javascript">
+		$("#tipDialog").click(function(){
+			dialog.tip("提示", "这是一个提示框。", function(){ alert("您关闭了提示框。"); });
+		});
+
+		$("#confirmDialog").click(function(){
+			dialog.confirm("确认", "请确认你有没有女朋友？", function(){ alert("有。"); }, function(){ alert("没有。"); });
+		});
+
+		$("#inputDialog").click(function(){
+			dialog.input("输入", "", "请输入姓名", function(t){ alert(t); }, function(t){ alert(t); });
+		});
+	</script>
+</body>
+</html>
